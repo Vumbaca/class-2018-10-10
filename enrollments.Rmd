@@ -1,0 +1,23 @@
+---
+title: "enrollment"
+author: "Max Vumbaca"
+date: "October 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+enrollments_2018 <- read_excel("class_enrollment_summary_by_term_10.10.18.xlsx", skip = 3)
+enrollments_2017 <- read_excel("class_enrollment_summary_by_term_10.20.17.xlsx", skip = 3)
+```
+
+```{r}
+enrollments_2018 %>%
+  arrange(desc(UGrad))
+```
+
